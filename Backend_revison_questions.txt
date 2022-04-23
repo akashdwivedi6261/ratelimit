@@ -1,0 +1,97 @@
+Q1. Explain in brief what is node js?
+
+ans -> Node.js is an open source development platform for executing JavaScript code server-side. Node is useful for developing applications that require a persistent connection from the browser to the server and is often used for real-time applications such as chat, news feeds and web push notifications.It allows js to run out-side of the browser.
+
+Q2.How is node js non blocking?
+
+ans -> The event loop is what allows Node.js to perform non-blocking I/O operations despite the fact that JavaScript is single-threaded. The loop, which runs on the same thread as the JavaScript code, grabs a task from the code and executes it. If the task is async or an I/O operation the loop offloads it to the system kernel, like in the case for new connections to the server, or to a thread pool, like file system related operations. The loop then grabs the next task and executes it.
+
+Q3. What is throughput?
+
+ans -> Throughput refers to the performance of tasks by a computing service or device over a specific period. It measures the amount of completed work against time consumed and may be used to measure the performance of a processor, memory and/or network communications.
+
+Q4. How is Node js having high IO throughput?
+
+ans -> Node.js is known to produce super-fast performing and scalable web applications. Node.js uses event-driven architecture and non-blocking tasks that run on a single thread.Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and add extra callbacks without blocking your main thread.
+
+Q5. What are CPU intensive tasks?
+
+ans -> They are complex user actions that eat up more RAM. A few of such processes can shut down your server entirely. Naturally, you want to make sure that your app or website is 'smart' enough to handle different kinds of tasks, for each individual user request.
+
+Q6. How can you end up blocking your main thread in node.js?
+
+ans -> Blocking is when the execution of additional JavaScript in the Node. js process must wait until a non-JavaScript operation completes. This happens because the event loop is unable to continue running JavaScript while a blocking operation is occurring.
+
+Q7. What is the event loop?
+
+ans -> The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading. The call stack is responsible for keeping track of all the operations in line to be executed. Whenever a function is finished, it is popped from the stack.The event queue is responsible for sending new functions to the stack for processing. It follows the queue data structure to maintain the correct sequence in which all operations should be sent for execution.Whenever an async function is called, it is sent to a browser API. These are APIs built into the browser. Based on the command received from the call stack, the API starts its own single-threaded operation.
+
+Q8. What are different phases in event loop?
+
+ans -> The Event Loop contains six main phases: timers, I/O callbacks, preparation / idle phase, I/O polling, setImmediate() callbacks execution, and close events callbacks.
+
+Q9. What is process.tick?
+ ans -> Every time the event loop takes a full trip, we call it a tick. When we pass a function to process.nextTick(), we instruct the engine to invoke this function at the end of the current operation, before the next event loop tick starts. The event loop is busy processing the current function code.
+
+Q10.How can you make a network request with http module from the backend?
+
+ans ->1) We start by loading the http module that’s standard with all Node.js installations
+         const http = require("http");
+      2) The http module contains the function to create the server
+            const host = 'localhost';
+            const port = 8000;
+      3) const requestListener = function (req, res) {
+          res.writeHead(200);
+          res.end("My first server!");
+        };
+
+Q10. How can you create your own events?
+ 
+ans-> This article demonstrates how to create and dispatch DOM events. Such events are commonly called synthetic events, as opposed to the events fired by the browser itself.
+
+          const event = new Event('build');
+          elem.addEventListener('build', function (e) { /* ... */ }, false);
+          elem.dispatchEvent(event);
+
+Q11. What are clusters?
+
+ans-> At a high level, a computer cluster is a group of two or more computers, or nodes, that run in parallel to achieve a common goal. This allows workloads consisting of a high number of individual, parallelizable tasks to be distributed among the nodes in the cluster. As a result, these tasks can leverage the combined memory and processing power of each computer to increase overall performance.
+
+Q12. The workload is the most popular reason we scale our applications, but it’s not the only reason. We also scale our applications to increase their availability and tolerance to failure.
+There are mainly three different things we can do to scale an application:
+
+1) Cloning : The easiest thing to do to scale a big application is to clone it multiple times and have each cloned instance handle part of the workload.
+2) We can also scale an application by decomposing it based on functionalities and services. 
+3) We can also split the application into multiple instances where each instance is responsible for only a part of the application’s data. This strategy is often named horizontal partitioning, or sharding, in databases.
+
+Q13. What is the difference between readFile and readFileSync?
+
+ans-> readFileSync() is synchronous and blocks execution until finished. These return their results as return values. readFile() are asynchronous and return immediately while they function in the background. You pass a callback function which gets called when they finish.
+
+Q14. What are CORS? How do you configure them? Why do you need them?
+
+ans-> Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request.
+
+Q15. What is rate limiting?
+
+ans -> Rate limiting is a feature used to control outgoing and incoming requests in a server. We might limit the number of requests a user without a premium account makes to 100 to an hour.
+The rate-limiting feature makes it possible to secure the Backend API from malicious attacks. It allows us to cap the number of requests that a user can make to our APIs.
+
+Q16. How does middlewares work in express?
+
+ans -> Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+
+     Middleware functions can perform the following tasks:
+
+     1) Execute any code.
+     2) Make changes to the request and the response objects.
+     3) End the request-response cycle.
+     4) Call the next middleware in the stack.
+
+
+
+
+
+ 
+      
+
